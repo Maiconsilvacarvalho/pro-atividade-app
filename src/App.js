@@ -24,10 +24,8 @@ function AddAtividade(e) {
     id: document.getElementById('id').value,
     descricao: document.getElementById('descricao').value,
   };
-    atividades.push(atividade)
-    console.log(atividades);
-
-    setAtividades(atividades)
+    
+    setAtividades([...atividades, { ...atividade}])
 
 }
 
