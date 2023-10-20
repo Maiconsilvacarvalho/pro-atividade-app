@@ -14,12 +14,11 @@ let initialState = [
 
 
 function App() {
+
   const [atividades, setAtividades] = useState(initialState)
 
-
-
-function AddAtividade(e) {
-  e.preventDefault();
+function AddAtividade(Add) {
+  Add.preventDefault();
   const atividade = {
     id: document.getElementById('id').value,
     descricao: document.getElementById('descricao').value,
@@ -31,23 +30,36 @@ function AddAtividade(e) {
 
   return (
     <Fragment>
-    <form>
-        <input id='id' type='text' placeholder='id'/>
-        <input id='descricao' type='text' placeholder='descricao'/>
-        <button onClick={AddAtividade}>+ ATIVIDADE</button>
+
+
+    <form class="row g-3">
+      <div className="col-md-6">
+         <label  for="inputEmail4" ClassName="form-label">Id</label>
+         <input  id='id' type="text" className="form-control" />
+      </div>
+
+      <div className="col-md-6">
+          <label  for="inputEmail4" ClassName="form-label">Descrição</label>
+          <input  id='descricao' type="text" className="form-control" />
+      </div>
+
+      <div class="col-auto" >
+           <button className="btn btn-outline-secondary" onClick={AddAtividade}>+ ATIVIDADE</button>
+      </div>
+
     </form>
     <div className="mt-3">
         
           {/* Map é como se fosse forEach */}
-          <ul className="list-group">
+          
             {atividades.map(ativ =>(
             <li key={ativ.id} className='list-group-item'>
               {ativ.id} - {ativ.descricao}</li>
-          ))}</ul>
+          ))}
           
         
-      
-    </div>
+      </div>
+  
     </Fragment>
   );
 }
