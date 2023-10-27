@@ -49,12 +49,16 @@ function AddAtividade(Add) {
 
     </form>
     <div className="mt-3">
-        
-          {/* Map é como se fosse forEach */}
-          
-            {atividades.map(ativ =>(
-            <li key={ativ.id} className='list-group-item'>
-              {ativ.id} - {ativ.descricao}</li>
+                                 {/* Map é como se fosse forEach */}
+        {atividades.map(ativ =>(
+            <div key={ativ.id} className="card" >
+                
+                <div class="card-body">
+                  <p class="card-text">
+                    {ativ.id} - {ativ.descricao}
+                  </p>
+                </div>
+            </div>
           ))}
           
         
