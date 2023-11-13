@@ -51,11 +51,21 @@ function AddAtividade(Add) {
     <div className="mt-3">
                                  {/* Map é como se fosse forEach */}
         {atividades.map(ativ =>(
-            <div key={ativ.id} className="card" >
+            <div key={ativ.id} className="card mb-2 shadow-sm" >
                 
-                <div class="card-body">
-                  <p class="card-text">
-                    {ativ.id} - {ativ.descricao}
+                <div className="card-body">
+                  <div className='d-flex justify-content-between'>
+                    <h5 ClassName ="card-title">
+                        teste
+                    </h5>
+
+                    <h6>
+                      teste
+                    </h6>
+                  </div>
+
+                  <p className="card-text">
+                      {ativ.id} - {ativ.descricao}
                   </p>
                 </div>
             </div>
